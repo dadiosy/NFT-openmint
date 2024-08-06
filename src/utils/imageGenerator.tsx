@@ -5,7 +5,8 @@ import fs from "fs";
 
 async function getGeneratedImages(pageNumber: number, pageCount: number): Promise<{ [fileName: string]: any }> {
   // const dirPath = path.join(process.cwd(), "public/collections");
-  const dirPath = path.resolve('./public', "collections");
+  // const dirPath = path.resolve('./public', "collections");
+  const dirPath = path.resolve('./public');
 
   return readJSONFiles(dirPath, pageNumber, pageCount);
 }
@@ -22,7 +23,8 @@ async function readJSONFiles(
   try {
     const files = await fs.promises.readdir(
       // path.join(process.cwd(), "public/collections")
-      path.resolve('./public', "collections")
+      // path.resolve('./public', "collections")
+      path.resolve('./public')
     );
 
     jsonFiles = files.filter(file => path.extname(file).toLowerCase() === '.json');
