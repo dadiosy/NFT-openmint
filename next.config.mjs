@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    target: 'serverless',
+    publicDir: 'public',
+};
 
 export default nextConfig;
