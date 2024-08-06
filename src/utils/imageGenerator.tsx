@@ -21,7 +21,12 @@ async function readJSONFiles(
   let jsonFiles: string[] = [];
 
   try {
-    const files = await fs.promises.readdir(
+    // const files = await fs.promises.readdir(
+    //   path.join(process.cwd(), "collections")
+    //   // path.resolve('./public', "collections")
+    //   // path.resolve('./collections')
+    // );
+    const files = fs.readdirSync(
       path.join(process.cwd(), "collections")
       // path.resolve('./public', "collections")
       // path.resolve('./collections')
